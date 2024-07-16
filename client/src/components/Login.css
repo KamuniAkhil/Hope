@@ -1,0 +1,28 @@
+body {
+    background: #007bff;
+    background: linear-gradient(135deg, #fe2929, #ffb3c5);
+
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+  }
+  
+  .btn-google {
+    color: rgb(3, 3, 3) !important;
+    background-color: #ea4335;
+  }
+/* .container {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+} */
