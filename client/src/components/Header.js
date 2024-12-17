@@ -18,7 +18,7 @@ function Header(props) {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         // setEmail(res.data.email);
-        // console.log(email);
+        console.log(email);
       } catch (err) {
         console.error(err);
       }
@@ -60,7 +60,7 @@ function Header(props) {
                   <input className="form-control search-field" type="search" id="search-field" name="search" />
                 </div>
               </form>
-              {(!auth.user) ? (<div className="buttons">
+              {/* {(!auth.user) ? (<div className="buttons">
                 <NavLink className="btn btn-light action-button" to="/login" role="button" >Log In</NavLink>
                 <NavLink className="btn btn-light action-button" to="/signup" role="button" >Signup</NavLink>
               </div>) :
@@ -68,7 +68,37 @@ function Header(props) {
                   <b className="bg-primary">{auth.user.email}</b>
                   <NavLink className="btn btn-light action-button" onClick={handleLogout} role="button" >Logout</NavLink>
                 </div>)
-              }
+              } */}
+
+              {auth.user.isLogged ? (
+                <div className="buttons">
+                  <b className="bg-primary">{auth.user.email}</b>
+                  <button
+                    className="btn btn-light action-button"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <div className="buttons">
+                  <NavLink
+                    className="btn btn-light action-button"
+                    to="/login"
+                    role="button"
+                  >
+                    Log In
+                  </NavLink>
+                  <NavLink
+                    className="btn btn-light action-button"
+                    to="/signup"
+                    role="button"
+                  >
+                    Signup
+                  </NavLink>
+                </div>
+              )}
+
             </div>
           </div>
         </nav>

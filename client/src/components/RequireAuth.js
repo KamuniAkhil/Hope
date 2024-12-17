@@ -7,7 +7,7 @@ export const RequireAuth=({children})=> {
   const auth=useAuth()
  
 
-  if(!auth.user){
+  if(!auth.user.isLogged){
     return <Navigate to="/login"  />
   }
   return children
